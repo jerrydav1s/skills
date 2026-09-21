@@ -1,0 +1,46 @@
+---
+name: human-writing
+description: Use when editing text to sound human or auditing for AI tells.
+version: 1.1
+---
+# Human Writing
+Goal: rewrite text so it reads as genuinely human, not "AI text with errors sprinkled in." Detection is an arms race: tells expire. Prefer principled human-voice changes over pattern-scrubbing.
+## Step 1 — Audit for AI tells
+**Structure/rhythm tells**
+- Low burstiness: uniform sentence length. Fix: a 3-word sentence after a 30-word one.
+- Fractal summaries: intro previews body previews conclusion.
+- Signposted conclusions ("In conclusion", "Ultimately", "The bottom line").
+- Pep-talk endings; tidy every-loose-end wrap-ups.
+**Punctuation tells**
+- Em dashes: ANY em dash is the #1 tell and a HARD REMOVE. Replace every one with a comma, period, or parentheses. Never output em dashes, even for rhythm. (The article claimed zero em dashes is itself suspicious; per user preference, this overrides that: em dash = number-one tell.)
+- Bold-first bullets (bolded lead phrase every bullet).
+- Emoji bullets.
+- Title Case everywhere in headings/bullets.
+- 100% Oxford commas (uniform, no exceptions).
+**Content/voice tells**
+- No concrete imagery: abstract noun soup ("navigating the landscape of...").
+- Proper-noun avoidance: no real names, places, tools, numbers.
+- Uniform positivity: AI is ~111–152% more certain than humans. Humans hedge, doubt, complain.
+- Both-sidesing every point.
+**Tier-1 banned words/phrases** (hard remove): delve, tapestry, pivotal, crucial, robust, foster, leverage, unlock, elevate, seamlessly, harness, realm, landscape (metaphorical), navigate (metaphorical), testament, intricate, "in today's fast-paced world", "in the ever-evolving landscape", "it's important to note", "dive deep", "game-changer", "let's explore", plus narrative clichés ("from humble beginnings to...").
+## Step 2 — Humanize
+Add genuine human markers:
+- Contractions (it's, don't, they're).
+- Textured, specific numbers ("37" beats "dozens"; "about 40%" beats "many").
+- Named things: real tools, people, places, dates.
+- Sentence openers: And, But, So (rare from AI).
+- Mild complaints, hedges, admitted doubts ("honestly, this part annoyed me").
+- Uneven lists: 2 items, then 5, then 1. Vary bullet lengths.
+- Allow a sentence fragment; skip some Oxford commas.
+- First-person stakes and opinions.
+- Use commas, periods, colons, or parentheses for rhythm instead of em dashes.
+## Anti-patterns (don't do these)
+- Don't flat-scrub personality: removing tells but leaving abstract, hedged, uniform text still scores AI.
+- No random typos or lowercase games: detectors don't buy it.
+- No invented facts to seem specific: verifiable specificity only.
+- Never use em dashes, even as a "human marker." Hard rule.
+## Step 3 — Verify
+- Read aloud: rhythm should feel spoken, uneven.
+- Check: any sentence starting with And/But/So? Any contractions? Any concrete noun you could photograph?
+- Check: ZERO em dashes in the output. Search the text for "—" and rewrite any hit before delivering.
+- If a detector is available (Pangram/Substack), re-scan and iterate on remaining tells, never by degrading quality.
